@@ -1,0 +1,101 @@
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+  --sand: rgb(238, 233, 214);
+}
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(
+    275deg,
+    rgba(120, 125, 76, 1) 0%,
+    rgba(105, 105, 105, 1) 35%,
+    rgba(204, 156, 136, 1) 100%
+  );
+}
+
+header {
+  text-align: center;
+  background: linear-gradient(
+    275deg,
+    rgba(120, 125, 76, 1) 0%,
+    rgba(105, 105, 105, 1) 35%,
+    rgba(204, 156, 136, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-inline: 4rem;
+}
+h1 {
+  font-family: "Aboreto", cursive;
+}
+header a {
+  color: var(--sand);
+  text-underline-offset: 5px;
+  font-size: 1.3rem;
+}
+.search {
+  position: relative;
+}
+#search {
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 20px var(--sand);
+  _background-color: var(--sand);
+}
+#lupe {
+  border: none;
+  background-color: transparent;
+  color: gray;
+  height: 100%;
+  font-size: 1.3rem;
+  padding-inline: 1rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  rotate: 180deg;
+}
+
+main {
+  width: 90vw;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgb(238, 233, 214);
+}
+table {
+  _border: 1px solid #333;
+  display: block;
+}
+
+thead {
+  background-color: #333;
+  color: #fff;
+}
+th {
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 1.2rem;
+}
+td {
+  padding-inline: 0.5rem;
+  color: #333;
+}
+tbody tr td:nth-child(2) {
+  width: 100%;
+}
+table a {
+  color: #333;
+}
+tbody tr:nth-child(2n) {
+  background-color: rgb(212, 198, 152);
+}
