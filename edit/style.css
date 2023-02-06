@@ -1,0 +1,95 @@
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+  --sand: rgb(238, 233, 214);
+}
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(
+    275deg,
+    rgba(120, 125, 76, 1) 0%,
+    rgba(105, 105, 105, 1) 35%,
+    rgba(204, 156, 136, 1) 100%
+  );
+}
+
+header {
+  text-align: left;
+  background: linear-gradient(
+    275deg,
+    rgba(120, 125, 76, 1) 0%,
+    rgba(105, 105, 105, 1) 35%,
+    rgba(204, 156, 136, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-inline: 4rem;
+}
+h1 {
+  font-family: "Aboreto", cursive;
+}
+header a {
+  color: var(--sand);
+  text-underline-offset: 5px;
+  font-size: 1.3rem;
+}
+main {
+  width: 90vw;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgb(238, 233, 214);
+}
+form {
+  position: relative;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.input-wrapper {
+  width: fit-content;
+  position: relative;
+  flex-grow: 1;
+}
+.input-wrapper input {
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding-inline: 0.4rem;
+  padding-block: 1rem 0.6rem;
+  border: 1px solid grey;
+  width: 90%;
+}
+.input-wrapper label {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  translate: 0 -50%;
+  color: gray;
+}
+.input-wrapper input:focus + label,
+.input-wrapper input:not(:placeholder-shown) + label {
+  font-size: 1rem;
+  top: 0.6rem;
+}
+.input-wrapper input:focus {
+  outline-color: var(--sand);
+}
+button {
+  font-size: 1.2rem;
+  font-family: "Aboreto", Times, serif;
+  background-color: #333;
+  color: white;
+}
+span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: red;
+}

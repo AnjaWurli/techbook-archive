@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Book: Create</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tech-Book Archiv</h1>
+        <a href="http://localhost:5500/index.html">back</a>
+    </header>
+    <main>
+        <p>To edit a book, changes some information:</p>
+        <form method="post">
+
+            <div class="input-wrapper">
+                <input type="text" id="title" placeholder=" ">
+                <label for="title">Title</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="subtitle" placeholder=" ">
+                <label for="subtitle">Subtitle</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="isbn" placeholder=" ">
+                <label for="isbn">ISBN</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="abstract" placeholder=" ">
+                <label for="abstract">What is it about?</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="author" placeholder=" ">
+                <label for="author">Author</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="publisher" placeholder=" ">
+                <label for="publisher">Publisher</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="price" placeholder=" ">
+                <label for="price">Price</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="numPages" placeholder=" ">
+                <label for="numPages">How many pages?</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="cover" placeholder=" ">
+                <label for="cover">Link to the cover</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="userId" placeholder=" ">
+                <label for="userId">Your user ID</label>
+            </div>
+            <span id="error"></span>
+            <button>Sumbit your changes</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
