@@ -30,8 +30,14 @@ Inspiration um die ID für das Editieren und die Detailseite auf einer extra Sei
 
 ## Zeit:
 
-Aufgabe 1: 1,5h
-Aufgabe 3: 1h
-Aufgabe 2: 30min
-Aufgabe 5: 1,5h
-Aufgabe 6: 1,5h
+- Aufgabe 1: 1,5h
+- Aufgabe 3: 1h
+- Aufgabe 2: 30min
+- Aufgabe 5: 1,5h
+- Aufgabe 6: 1,5h
+- Aufgabe 4: 1h
+- Aufgabe 7: 1h
+
+---
+
+- Total: 8h

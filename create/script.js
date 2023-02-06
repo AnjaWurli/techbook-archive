@@ -33,7 +33,8 @@ document.body.addEventListener("submit", (event) => {
       .then((data) => console.log(data));
 
     //go to next page after submitting
-    window.location = "http://localhost:5500/index.html";
+    window.location =
+      "http://localhost:5500/book-detail/index.html?id=" + newEntry.id;
   } catch (e) {
     //if one input not filled
     document.querySelector("#error").innerText =
