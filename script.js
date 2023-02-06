@@ -1,8 +1,11 @@
-let state = { books: [], filter: [] };
+let state = { books: [], filter: [], wishlist: [] };
+if (localStorage.getItem("wishlist")) {
+  state.wishlist = JSON.parse(localStorage.getItem("wishlist"));
+}
 
 function getData() {
   //fetch("https://bookmonkey-api.jgreg.uber.space/books?_page=2&_limit=10")
-  fetch("http://localhost:4730/books") //?_page=2&_limit=10
+  fetch("http://localhost:4730/books")
     .then((response) => {
       return response.json();
     })
@@ -42,13 +45,24 @@ function render(list) {
 
     const tdEdit = document.createElement("td");
     const editBt = document.createElement("button");
+    const editLink = document.createElement("a");
+    editLink.setAttribute(
+      "href",
+      "http://localhost:5500/edit/index.html?id=" + book.id
+    );
     const editTxt = document.createTextNode("📝");
+    editLink.append(editTxt);
+    editBt.append(editLink);
     tdEdit.append(editBt);
-    editBt.append(editTxt);
 
     const tdSave = document.createElement("td");
     const saveBt = document.createElement("button");
-    const saveText = document.createTextNode("💾");
+    let saveText = document.createTextNode("💾");
+    for (let wish of state.wishlist) {
+      if (wish.isbn === book.isbn) {
+        saveText = document.createTextNode("✅");
+      }
+    }
     tdSave.append(saveBt);
     saveBt.append(saveText);
 
@@ -56,19 +70,37 @@ function render(list) {
   }
   document
     .querySelectorAll("button")
-    .forEach((b) => b.addEventListener("click", deleteEntry));
+    .forEach((b) => b.addEventListener("click", buttons));
 }
 
 getData();
 
-//delete Entry
-function deleteEntry(e) {
+function buttons(e) {
+  const isbn = e.target.parentElement.parentElement.classList.value;
+  //delete Entry
   if (e.target.innerText === "❌") {
-    const isbn = e.target.parentElement.parentElement.classList.value;
     fetch("http://localhost:4730/books/" + isbn, { method: "DELETE" })
       .then((res) => res.json())
       .then();
     getData();
+  }
+  //save
+  for (let book of state.books) {
+    if (book.isbn === isbn) {
+      if (e.target.innerText === "💾") {
+        state.wishlist.push(book);
+        localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
+        e.target.innerText = "✅";
+      } else if (e.target.innerText === "✅") {
+        for (let i = state.wishlist.length - 1; i >= 0; i--) {
+          if (state.wishlist[i].isbn === isbn) {
+            state.wishlist.splice(i, 1);
+            localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
+            e.target.innerText = "💾";
+          }
+        }
+      }
+    }
   }
 }
 
